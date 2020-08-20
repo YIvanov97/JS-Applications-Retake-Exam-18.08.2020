@@ -1,0 +1,27 @@
+{{> header}}
+
+{{#if isAuth}}
+{{#each shoes}}
+
+<div class="shoes">
+            <div class="shoe">
+                <img src="{{imageUrl}}">
+                <h3>{{title}}</h3>
+                <a href="#/details/{{id}}">Buy it for ${{price}}</a>
+            </div>
+        </div>
+{{/each}}
+{{else}}
+<div class="container">
+            <div class="about-us">
+                <div>
+                    <img src="./styles/shoes.jpg" alt="">
+                    <img src="./styles/shoes2.jpg" alt="">
+                </div>
+                <p>
+                    <a href="#/register">Register Now</a> and Try it!
+                </p>
+            </div>
+        </div>
+{{/if}}
+{{> footer}}
