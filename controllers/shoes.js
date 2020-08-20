@@ -1,6 +1,6 @@
 import commonPartial from './partials.js';
 import {setHeader} from './auth.js';
-import {create, get, update, close} from '../models/shoes.js';
+import {create, get, update, deleteEl} from '../models/shoes.js';
 
 export function getDetails(ctx) {
     setHeader(ctx);
@@ -48,9 +48,9 @@ export function postEdit(ctx) {
     }).catch(err => console.log(err))
 }
 
-export function getClose(ctx) {  //delete
+export function getDelete(ctx) {  
     const id = ctx.params.id;
-    close(id).then( res => {
+    deleteEl(id).then( res => {
         ctx.redirect('#/home')
     }).catch(err => console.log(err))
 }

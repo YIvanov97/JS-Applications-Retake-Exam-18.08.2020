@@ -7,7 +7,7 @@ export function getAll() {
 export function get(id) {
     return firebase.firestore().collection('shoes').doc(id).get()
 }
-export function close(id) {
+export function deleteEl(id) {
     return firebase.firestore().collection('shoes').doc(id).delete()
 }
 export function update(id, data) {

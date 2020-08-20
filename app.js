@@ -1,6 +1,6 @@
 import {getHome} from './controllers/home.js'
 import {getRegister, postRegister, getLogin, postLogin, getLogout} from './controllers/user.js'
-import {getCreate, postCreate, getDetails, getEdit, postEdit, getClose, getJoin} from './controllers/shoes.js'
+import {getCreate, postCreate, getDetails, getEdit, postEdit, getDelete, getJoin} from './controllers/shoes.js'
 
 const app = Sammy("main", function () {
     this.use("Handlebars", "hbs");
@@ -23,7 +23,7 @@ const app = Sammy("main", function () {
     this.get('#/edit/:id', getEdit)
     this.post('#/edit/:id', postEdit)
 
-    this.get('#/delete/:id', getClose)
+    this.get('#/delete/:id', getDelete)
 
     this.get('#/buy/:id', getJoin)
 
